@@ -1,3 +1,4 @@
+SRC+=convert/int_to_str.c
 SRC+=lists/ft_foreach.c
 SRC+=lists/ft_lstadd.c
 SRC+=lists/ft_lstdel.c
