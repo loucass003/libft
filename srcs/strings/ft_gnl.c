@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 12:30:49 by llelievr          #+#    #+#             */
-/*   Updated: 2018/12/22 03:01:00 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/01/15 12:17:07 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int			append(t_buff **e, char *buf, ssize_t rd)
 
 int					ft_gnl(const int fd, char **line)
 {
-	static t_buff	*lst[(long)INT_MAX + 1];
+	static t_buff	*lst[OPEN_MAX];
 	char			buf[GNL_BUFF_SIZE + 1];
 	ssize_t			rd;
 

@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/01/09 15:08:08 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/01/24 19:02:49 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ typedef struct		s_vec2
 	float			x;
 	float			y;
 }					t_vec2;
+
+typedef struct		s_mat2_data
+{
+	float			m00;
+	float			m01;
+	float			m10;
+	float			m11;
+}					t_mat2_data;
 
 typedef struct		s_mat4_data
 {
@@ -52,6 +60,12 @@ typedef	union		u_mat4
 	float			a[4][4];
 	t_mat4_data		d;
 }					t_mat4;
+
+typedef union		u_mat2
+{
+	float			a[2][2];
+	t_mat2_data		d;
+}					t_mat2;
 
 int					ft_abs(int n);
 float				ft_absf(float n);
@@ -84,5 +98,11 @@ t_mat4				ft_mat4_rotation(t_vec3 angles);
 t_mat4				ft_mat4_scale(t_vec3 s);
 t_mat4				ft_mat4_mul(t_mat4 a, t_mat4 b);
 t_vec3				ft_mat4_mulv(t_mat4 m, t_vec3 v);
+
+t_mat2				ft_mat2_identity(void);
+t_mat2				ft_mat2_rotation(float theta);
+t_mat2				ft_mat2_scale(t_vec2 s);
+t_mat2				ft_mat2_mul(t_mat2 a, t_mat2 b);
+t_vec2				ft_mat2_mulv(t_mat2 m, t_vec2 v);
 
 #endif
