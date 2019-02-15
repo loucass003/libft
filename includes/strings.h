@@ -15,10 +15,14 @@
 # define GNL_BUFF_SIZE 4096
 # include "libft.h"
 
+# ifndef OPEN_MAX
+#  define OPEN_MAX (4096)
+# endif
+
 typedef struct		s_buff
 {
 	char			*buf;
-	ssize_t			len;
+	size_t			len;
 }					t_buff;
 
 int					ft_gnl(const int fd, char **line);

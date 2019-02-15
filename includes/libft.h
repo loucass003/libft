@@ -14,6 +14,7 @@
 # define FT_LIBFT_H
 # include <string.h>
 # include <sys/types.h>
+# include <stddef.h>
 # include "strings.h"
 # include "memory.h"
 # include "convert.h"

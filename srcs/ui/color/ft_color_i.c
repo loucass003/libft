@@ -14,5 +14,5 @@
 
 int		ft_color_i(t_color c)
 {
-	return ((c.r << 16) | (c.g << 8) | c.b);
+	return ((c.a << 20) | (c.r << 16) | (c.g << 8) | c.b);
 }

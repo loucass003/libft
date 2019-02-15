@@ -12,7 +12,7 @@
 
 include src.mk
 
-CC = gcc
+CC = clang
 NAME =libft.a
 CFLAGS=-Wall -Werror -Wextra -I ./includes -flto -O3 -ffast-math
 OBJ=$(addprefix $(OBJDIR),$(SRC:.c=.o))
@@ -31,7 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf $(INFO)"CREATING LIBRARY ($(NAME)) "$(RESET)"\n"
-	@ar cr $(NAME) $(OBJ)
+	@ar crs $(NAME) $(OBJ)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@if [ ! -d $(dir $@) ]; then mkdir -p $(dir $@); fi
