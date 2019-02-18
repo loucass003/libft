@@ -6,13 +6,14 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:08:28 by llelievr          #+#    #+#             */
-/*   Updated: 2019/01/09 15:07:09 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/18 15:42:01 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UI_H
 # define UI_H
 # include "libft.h"
+# include "json.h"
 
 typedef struct		s_size
 {
@@ -35,10 +36,17 @@ typedef struct		s_color
 	u_int8_t		a;
 }					t_color;
 
+typedef	union		u_color
+{
+	u_int8_t		a[4];
+	t_color			c;
+}					t_color_u;
+
 t_color				ft_color(u_int8_t r, u_int8_t g, u_int8_t b);
 t_color				ft_i_color(int c);
 int					ft_color_i(t_color c);
 t_color				ft_color_gradient(t_color a, t_color b, float percent);
+t_bool				ft_json_color(t_json_value *val, t_color *color);
 
 t_pixel				ft_pixel_add(t_pixel a, t_pixel b);
 t_pixel				ft_pixel_sub(t_pixel a, t_pixel b);
