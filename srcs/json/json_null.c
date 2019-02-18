@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   json_null.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 23:29:20 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 23:39:56 by llelievr         ###   ########.fr       */
+/*   Created: 2019/02/16 22:59:13 by llelievr          #+#    #+#             */
+/*   Updated: 2019/02/17 21:42:45 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_realloc(void *o_ptr, size_t oldsize, size_t newsize)
+t_json_value	*json_parse_null(t_json_state *state)
 {
-	void	*ptr;
+	t_json_value	*nil;
 
-	ptr = malloc(newsize);
-	if (oldsize)
-	{
-		ft_memcpy(ptr, o_ptr, oldsize);
-		free(o_ptr);
-	}
-	return (ptr);
+	if (!(nil = (t_json_value *)malloc(sizeof(t_json_value))))
+		return (NULL);
+	state->pos += 4;
+	nil->type = JSON_NULL;
+	return (nil);
 }

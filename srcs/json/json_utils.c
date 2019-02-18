@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   json_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 23:29:20 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 23:39:56 by llelievr         ###   ########.fr       */
+/*   Created: 2019/02/16 23:47:49 by llelievr          #+#    #+#             */
+/*   Updated: 2019/02/17 21:42:29 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_realloc(void *o_ptr, size_t oldsize, size_t newsize)
+char		json_skip_ws(t_json_state *state)
 {
-	void	*ptr;
+	char 	c;
 
-	ptr = malloc(newsize);
-	if (oldsize)
-	{
-		ft_memcpy(ptr, o_ptr, oldsize);
-		free(o_ptr);
-	}
-	return (ptr);
+	c = state->str[state->pos++];
+	while (state->pos < state->len && json_is_ws(c))
+		c = state->str[state->pos++];
+	return (c);
+}
+
+int			json_is_ws(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\r');
+}
+
+int			json_match_key(t_json_state *s, char *at, char *key, int len)
+{
+	return (s->pos + len < s->len && ft_strnequ(key, at, len));
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   json_boolean.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 23:29:20 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 23:39:56 by llelievr         ###   ########.fr       */
+/*   Created: 2019/02/16 22:59:46 by llelievr          #+#    #+#             */
+/*   Updated: 2019/02/17 21:42:46 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_realloc(void *o_ptr, size_t oldsize, size_t newsize)
+t_json_value	*json_parse_boolean(t_json_state *state, t_bool is_true)
 {
-	void	*ptr;
+	t_json_boolean	*b;
 
-	ptr = malloc(newsize);
-	if (oldsize)
-	{
-		ft_memcpy(ptr, o_ptr, oldsize);
-		free(o_ptr);
-	}
-	return (ptr);
+	if (!(b = (t_json_boolean *)malloc(sizeof(t_json_boolean))))
+		return (NULL);
+	state->pos += is_true ? 4 : 5;
+	b->value = is_true;
+	b->super.type = JSON_BOOLEAN;
+	return ((t_json_value *)b);
 }

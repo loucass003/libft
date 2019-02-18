@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-include src.mk
+-include src.mk
 
 CC = clang
 NAME =libft.a
@@ -31,7 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf $(INFO)"CREATING LIBRARY ($(NAME)) "$(RESET)"\n"
-	@ar crs $(NAME) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@if [ ! -d $(dir $@) ]; then mkdir -p $(dir $@); fi
