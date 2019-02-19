@@ -107,6 +107,7 @@ SRC+=ui/pixel/ft_pixel_mul.c
 SRC+=ui/pixel/ft_pixel_div.c
 SRC+=ui/pixel/ft_pixel_add.c
 SRC+=ui/pixel/ft_pixel_sub.c
+SRC+=ui/ft_size.c
 SRC+=ui/color/ft_color_i.c
 SRC+=ui/color/ft_color.c
 SRC+=ui/color/ft_color_gradient.c

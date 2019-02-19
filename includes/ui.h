@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:08:28 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/18 15:42:01 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/19 01:17:38 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef struct		s_size
 	size_t			height;
 	size_t			width;
 }					t_size;
+
+typedef	union		u_size
+{
+	size_t			a[4];
+	t_size			s;
+}					t_size_u;
 
 typedef struct		s_pixel
 {
@@ -52,5 +58,7 @@ t_pixel				ft_pixel_add(t_pixel a, t_pixel b);
 t_pixel				ft_pixel_sub(t_pixel a, t_pixel b);
 t_pixel				ft_pixel_div(t_pixel a, t_pixel b);
 t_pixel				ft_pixel_mul(t_pixel a, t_pixel b);
+
+t_bool				ft_json_size(t_json_value *val, t_size *size);
 
 #endif

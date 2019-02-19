@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:34:20 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/18 03:00:00 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/19 01:29:22 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ t_json_value		*json_object_get(t_json_object *obj, char *key)
 	mem = obj->elements;
 	while (mem)
 	{
-		if (ft_strncmp(mem->string->value, key, mem->string->value_len) == 0)
+		if (mem->string->value_len == ft_strlen(key) 
+			&& ft_strncmp(mem->string->value, key, mem->string->value_len) == 0)
 			return (mem->value);
 		mem = mem->next;
 	}
