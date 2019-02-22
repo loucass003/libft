@@ -6,13 +6,13 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:18:50 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/19 22:38:23 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/22 17:44:44 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_color		ft_color(u_int8_t r, u_int8_t g, u_int8_t b)
+t_color		ft_color(uint8_t r, uint8_t g, uint8_t b)
 {
 	return (t_color){ r, g, b, 255 };
 }
