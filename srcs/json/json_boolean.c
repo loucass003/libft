@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 22:59:46 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 21:42:46 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/23 19:21:11 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,16 @@ t_json_value	*json_parse_boolean(t_json_state *state, t_bool is_true)
 	b->value = is_true;
 	b->super.type = JSON_BOOLEAN;
 	return ((t_json_value *)b);
+}
+
+t_bool			*json_to_bool(t_json_value *value)
+{
+	if (!value || value->type != JSON_BOOLEAN)
+		return (NULL);
+	return &(((t_json_boolean *)value)->value);
+}
+
+t_bool			*json_get_bool(t_json_object *obj, char *key)
+{
+	return (json_to_bool(json_object_get(obj, key)));
 }

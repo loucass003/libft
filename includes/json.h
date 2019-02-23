@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 12:19:06 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/18 02:55:03 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/23 19:26:48 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,16 @@ t_json_value	*json_parse_string(t_json_state *state);
 t_json_value	*json_parse_object(t_json_state *state);
 t_json_value	*json_object_get(t_json_object *obj, char *key);
 t_json_value	*json_parse_array(t_json_state *state);
+
+t_json_array	*json_to_array(t_json_value *val);
+t_json_array	*json_get_array(t_json_object *obj, char *key);
+t_bool			*json_to_bool(t_json_value *val);
+t_bool			*json_get_bool(t_json_object *obj, char *key);
+double			*json_to_number(t_json_value *val);
+double			*json_get_number(t_json_object *obj, char *key);
+t_json_string	*json_to_string(t_json_value *val);
+t_json_string	*json_get_string(t_json_object *obj, char *key);
+
 char			json_skip_ws(t_json_state *state);
 int				json_is_ws(char c);
 int				json_match_key(t_json_state *s, char *at, char *key, int len);

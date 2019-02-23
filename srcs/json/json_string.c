@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:07:53 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 21:42:27 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/23 19:36:25 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,16 @@ t_json_value	*json_parse_string(t_json_state *state)
 			state->pos++;
 	}
 	return (NULL);
+}
+
+t_json_string	*json_to_string(t_json_value *value)
+{
+	if (!value || value->type != JSON_STRING)
+		return (NULL);
+	return ((t_json_string *)value);
+}
+
+t_json_string	*json_get_string(t_json_object *obj, char *key)
+{
+	return (json_to_string(json_object_get(obj, key)));
 }
