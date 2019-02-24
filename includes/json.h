@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 12:19:06 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/23 19:26:48 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 16:02:24 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ double			*json_to_number(t_json_value *val);
 double			*json_get_number(t_json_object *obj, char *key);
 t_json_string	*json_to_string(t_json_value *val);
 t_json_string	*json_get_string(t_json_object *obj, char *key);
+t_json_object	*json_get_object(t_json_object *obj, char *key);
 
 char			json_skip_ws(t_json_state *state);
 int				json_is_ws(char c);

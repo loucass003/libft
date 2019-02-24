@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_vec3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 17:49:12 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 16:13:10 by llelievr         ###   ########.fr       */
+/*   Created: 2019/02/24 16:11:37 by llelievr          #+#    #+#             */
+/*   Updated: 2019/02/24 16:43:28 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float		ft_sqrt(int n)
+t_bool		ft_json_vec3(t_json_value *val, t_vec3 *vec)
 {
-	float	out;
-	float	last;
+	t_json_array	*arr;
+	t_json_element	*elem;
+	t_vec3_u		*v;
+	int				i;
 
-	if (n <= 0)
-		return (0);
-	last = 0;
-	out = n / 2;
-	while (out != last)
+	if (!(arr = json_to_array(val)) || arr->elems_count != 3)
+		return (FALSE);
+	elem = arr->elements;
+	i = 0;
+	v = (t_vec3_u*)vec;
+	while (elem)
 	{
-		last = out;
-		out = 0.5 * (out + n / out);
+		if (elem->value->type != JSON_NUMBER)
+			return (FALSE);
+		v->a[i++] = (float)((t_json_number *)elem->value)->value;
+		elem = elem->next;
 	}
-	return (out);
+	return (TRUE);
 }

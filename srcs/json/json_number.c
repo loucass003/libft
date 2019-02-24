@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:00:59 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/23 19:20:45 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 16:02:41 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,5 @@ double			*json_to_number(t_json_value *value)
 
 double			*json_get_number(t_json_object *obj, char *key)
 {
-	return (json_to_bool(json_object_get(obj, key)));
+	return (json_to_number(json_object_get(obj, key)));
 }

@@ -6,13 +6,14 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/01/24 19:02:49 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 16:43:38 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATHS_H
 # define MATHS_H
 # include "libft.h"
+# include "json.h"
 
 typedef struct		s_vec3
 {
@@ -21,11 +22,23 @@ typedef struct		s_vec3
 	float			z;
 }					t_vec3;
 
+typedef	union		u_vec3_u
+{
+	float			a[3];
+	t_vec3			v;
+}					t_vec3_u;
+
 typedef struct		s_vec2
 {
 	float			x;
 	float			y;
 }					t_vec2;
+
+typedef	union		u_vec2_u
+{
+	float			a[2];
+	t_vec2			v;
+}					t_vec2_u;
 
 typedef struct		s_mat2_data
 {
@@ -72,6 +85,9 @@ float				ft_absf(float n);
 
 float				ft_sqrt(int f);
 int					ft_pow(int n, int pow);
+
+t_bool				ft_json_vec3(t_json_value *val, t_vec3 *vec);
+t_bool				ft_json_vec2(t_json_value *val, t_vec2 *vec);
 
 t_vec3				ft_vec3_add(t_vec3 a, t_vec3 b);
 t_vec3				ft_vec3_sub(t_vec3 a, t_vec3 b);

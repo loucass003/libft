@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 01:13:35 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/19 01:17:56 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 16:39:02 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ t_bool		ft_json_size(t_json_value *val, t_size *size)
 	t_size_u		*s;
 	int				i;
 
-	if (!val || val->type != JSON_ARRAY)
-		return (FALSE);
-	arr = (t_json_array *)val;
-	if (arr->elems_count != 2)
+	if (!(arr = json_to_array(val)) || arr->elems_count != 3)
 		return (FALSE);
 	elem = arr->elements;
 	i = 0;

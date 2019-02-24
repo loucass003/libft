@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:34:20 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/23 19:30:05 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 17:04:52 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ t_json_value		*json_object_get(t_json_object *obj, char *key)
 	return (NULL);
 }
 
-t_json_string	*json_get_object(t_json_object *obj, char *key)
+t_json_object	*json_get_object(t_json_object *obj, char *key)
 {
 	const t_json_value	*val = json_object_get(obj, key);
 	if (!val || val->type != JSON_OBJECT)
