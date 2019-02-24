@@ -6,13 +6,13 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 17:49:12 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 16:13:10 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 21:05:21 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float		ft_sqrt(int n)
+float		ft_sqrt(float n)
 {
 	float	out;
 	float	last;

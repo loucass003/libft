@@ -6,7 +6,7 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/02/24 14:26:26 by llelievr         ###   ########.fr        #
+#    Updated: 2019/02/25 00:15:28 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 CC = clang
 NAME =libft.a
-CFLAGS=-Wall -Werror -Wextra -I ./includes -flto -O3 -ffast-math
+CFLAGS=-Wall -Werror -Wextra -I ./includes -flto -O2 -ffast-math
 OBJ=$(addprefix $(OBJDIR),$(SRC:.c=.o))
 
 SRCDIR	=./srcs/
