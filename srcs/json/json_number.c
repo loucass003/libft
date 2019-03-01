@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:00:59 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/01 18:31:19 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 18:55:26 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static double	parse_floating(t_json_state *state)
 t_json_value	*json_parse_number(t_json_state *state)
 {
 	char			sign;
-	char 			c;
+	char			c;
 	t_json_number	*num;
 
 	if (state->pos < state->len)
@@ -41,14 +41,10 @@ t_json_value	*json_parse_number(t_json_state *state)
 		c = state->str[state->pos++];
 		if (!(num = (t_json_number *)malloc(sizeof(t_json_number))))
 			return (NULL);
-		num->value = 0;
-		num->super.type = JSON_NUMBER;
-		sign = 1;
+		*num = (t_json_number) { .super = { .type = JSON_NUMBER }, .value = 0 };
+		sign = (c == '+' || c == '-' ? c == '-' : 0);
 		if (c == '+' || c == '-')
-		{
-			sign = (c == '+' ? 1 : -1);
 			c = state->str[state->pos++];
-		}
 		while (ft_isdigit(c) && state->pos < state->len)
 		{
 			num->value = num->value * 10 + (c - '0');
@@ -56,7 +52,7 @@ t_json_value	*json_parse_number(t_json_state *state)
 		}
 		if (c == '.')
 			num->value += parse_floating(state);
-		num->value *= sign;
+		num->value *= sign ? -1 : 1;
 		state->pos--;
 		return ((t_json_value *)num);
 	}
