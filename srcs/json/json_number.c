@@ -6,7 +6,11 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:00:59 by llelievr          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/03/01 15:44:03 by llelievr         ###   ########.fr       */
+=======
+/*   Updated: 2019/03/01 18:16:53 by llelievr         ###   ########.fr       */
+>>>>>>> fix number
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +36,8 @@ static double	parse_floating(t_json_state *state)
 
 t_json_value	*json_parse_number(t_json_state *state)
 {
-	char			c;
+	char			sign;
+	char 			c;
 	t_json_number	*num;
 
 	if (state->pos < state->len)
@@ -42,6 +47,11 @@ t_json_value	*json_parse_number(t_json_state *state)
 			return (NULL);
 		num->value = 0;
 		num->super.type = JSON_NUMBER;
+		if (c == '+' || c == '-')
+		{
+			sign = (c == '+' ? 1 : -1);
+			c = state->str[state->pos++];
+		}
 		while (ft_isdigit(c) && state->pos < state->len)
 		{
 			num->value = num->value * 10 + (c - '0');
@@ -49,6 +59,7 @@ t_json_value	*json_parse_number(t_json_state *state)
 		}
 		if (c == '.')
 			num->value += parse_floating(state);
+		num->value *= sign;
 		state->pos--;
 		return ((t_json_value *)num);
 	}
