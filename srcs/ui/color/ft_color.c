@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:18:50 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/22 17:44:44 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:27:43 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ t_bool		ft_json_color(t_json_value *val, t_color *color)
 	elem = arr->elements;
 	i = 0;
 	c = (t_color_u*)color;
-	c->c.a = (u_int8_t)255;
+	c->c.a = (uint8_t)255;
 	while (elem)
 	{
 		if (elem->value->type != JSON_NUMBER)
 			return (FALSE);
-		c->a[i++] = (u_int8_t)((t_json_number *)elem->value)->value;
+		c->a[i++] = (uint8_t)((t_json_number *)elem->value)->value;
 		elem = elem->next;
 	}
 	return (TRUE);

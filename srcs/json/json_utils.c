@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:47:49 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 21:42:29 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:35:41 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		json_skip_ws(t_json_state *state)
 {
-	char 	c;
+	char	c;
 
 	c = state->str[state->pos++];
 	while (state->pos < state->len && json_is_ws(c))

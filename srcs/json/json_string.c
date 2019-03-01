@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:07:53 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/23 19:36:25 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:30:49 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ t_json_value	*json_parse_string(t_json_state *state)
 	char			c;
 	size_t			len;
 	t_json_string	*string;
-	
+
 	if ((len = parse_len(state)) == -1)
 		return (NULL);
-	if (!(string = (t_json_string *)malloc(sizeof(t_json_string) 
+	if (!(string = (t_json_string *)malloc(sizeof(t_json_string)
 		+ (len + 1) * sizeof(char))))
 		return (NULL);
 	string->value[len] = 0;

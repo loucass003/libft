@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:08:28 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 16:38:22 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:53:31 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ typedef struct		s_pixel
 
 typedef struct		s_color
 {
-	u_int8_t		r;
-	u_int8_t		g;
-	u_int8_t		b;
-	u_int8_t		a;
+	uint8_t		r;
+	uint8_t		g;
+	uint8_t		b;
+	uint8_t		a;
 }					t_color;
 
 typedef	union		u_color
 {
-	u_int8_t		a[4];
-	t_color			c;
+	uint8_t		a[4];
+	t_color		c;
 }					t_color_u;
 
-t_color				ft_color(u_int8_t r, u_int8_t g, u_int8_t b);
+t_color				ft_color(uint8_t r, uint8_t g, uint8_t b);
 t_color				ft_i_color(int c);
 int					ft_color_i(t_color c);
 t_color				ft_color_gradient(t_color a, t_color b, float percent);

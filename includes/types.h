@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 17:49:12 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/01 15:30:00 by llelievr         ###   ########.fr       */
+/*   Created: 2019/03/01 15:55:59 by llelievr          #+#    #+#             */
+/*   Updated: 2019/03/01 15:57:03 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef TYPES_H
+# define TYPES_H
 
-float		ft_sqrt(int n)
+typedef enum		e_bool
 {
-	float	out;
-	float	last;
+	TRUE = 1,
+	FALSE = 0
+}					t_bool;
 
-	if (n <= 0)
-		return (0);
-	last = 0;
-	out = n / 2;
-	while (out != last)
-	{
-		last = out;
-		out = 0.5 * (out + n / out);
-	}
-	return (out);
-}
+#endif

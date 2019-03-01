@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 07:00:18 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 21:42:45 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:39:51 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,13 @@ void	json_free_value(t_json_value *val)
 {
 	if (val->type == JSON_OBJECT)
 	{
-		t_json_member *e = ((t_json_object *)val)->elements;
-		if (e)
-			json_free_members(&e);
+		if (((t_json_object *)val)->elements)
+			json_free_members(&((t_json_object *)val)->elements);
 	}
 	else if (val->type == JSON_ARRAY)
 	{
-		t_json_element *e = ((t_json_array *)val)->elements;
-		if (e)
-			json_free_array(&e);
+		if (((t_json_array *)val)->elements)
+			json_free_array(&((t_json_array *)val)->elements);
 	}
 	json_free_ret(val);
 }

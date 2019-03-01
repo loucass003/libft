@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 22:55:23 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 21:39:21 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:36:15 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_json_value	*parse_value(t_json_state *s)
 {
-	char 			c;
+	char			c;
 	t_bool			is_true;
 
 	if (s->pos < s->len)
@@ -35,7 +35,7 @@ t_json_value	*parse_value(t_json_state *s)
 		else if (ft_isdigit(c) || c == '+' || c == '-')
 			return (json_parse_number(s));
 		else
-			return (NULL); // MEH ?
+			return (NULL);
 	}
 	return (NULL);
 }

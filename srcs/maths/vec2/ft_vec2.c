@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 16:30:10 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 16:43:26 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:29:51 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ t_bool		ft_json_vec2(t_json_value *val, t_vec2 *vec)
 	}
 	return (TRUE);
 }
-

@@ -6,14 +6,14 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:00:59 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 16:02:41 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:44:03 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static double   parse_floating(t_json_state *state)
+static double	parse_floating(t_json_state *state)
 {
 	char	c;
 	double	part;
@@ -32,7 +32,7 @@ static double   parse_floating(t_json_state *state)
 
 t_json_value	*json_parse_number(t_json_state *state)
 {
-	char 			c;
+	char			c;
 	t_json_number	*num;
 
 	if (state->pos < state->len)
@@ -48,7 +48,7 @@ t_json_value	*json_parse_number(t_json_state *state)
 			c = state->str[state->pos++];
 		}
 		if (c == '.')
-			num->value += parse_floating(state);	
+			num->value += parse_floating(state);
 		state->pos--;
 		return ((t_json_value *)num);
 	}
@@ -59,7 +59,7 @@ double			*json_to_number(t_json_value *value)
 {
 	if (!value || value->type != JSON_NUMBER)
 		return (NULL);
-	return &(((t_json_number *)value)->value);
+	return (&(((t_json_number *)value)->value));
 }
 
 double			*json_get_number(t_json_object *obj, char *key)

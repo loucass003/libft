@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:23:49 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/17 21:41:16 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:56:39 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@
 # include <sys/types.h>
 # include <stddef.h>
 
-typedef enum		e_bool
-{
-	TRUE = 1,
-	FALSE = 0
-}					t_bool;
-
+# include "types.h"
 # include "strings.h"
 # include "memory.h"
 # include "convert.h"
