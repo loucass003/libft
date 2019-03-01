@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 16:43:38 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/02/24 21:05:42 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef union		u_mat2
 int					ft_abs(int n);
 float				ft_absf(float n);
 
-float				ft_sqrt(int f);
+float				ft_sqrt(float f);
 int					ft_pow(int n, int pow);
 
 t_bool				ft_json_vec3(t_json_value *val, t_vec3 *vec);
