@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_i_color.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dde-jesu <dde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:20:27 by llelievr          #+#    #+#             */
-/*   Updated: 2019/01/09 15:04:13 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/03 15:40:55 by dde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 t_color		ft_i_color(int c)
 {
-	return (ft_color((u_int8_t)((c & 0xFF0000) >> 16),
-		(u_int8_t)((c & 0xFF00) >> 8),
-		(u_int8_t)(c & 0xFF)));
+	return ((t_color) {
+		.a = (c >> 24) & 0xFF,
+		.r = (c >> 16) & 0xFF,
+		.g = (c >> 8) & 0xFF,
+		.b = c & 0xFF,
+	});
 }
