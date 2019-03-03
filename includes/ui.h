@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:08:28 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/01 15:53:31 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/03 18:43:04 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ t_color				ft_i_color(int c);
 int					ft_color_i(t_color c);
 t_color				ft_color_gradient(t_color a, t_color b, float percent);
 t_bool				ft_json_color(t_json_value *val, t_color *color);
+t_color				ft_alpha_blend(t_color c1, t_color c2);
 
 t_pixel				ft_pixel_add(t_pixel a, t_pixel b);
 t_pixel				ft_pixel_sub(t_pixel a, t_pixel b);

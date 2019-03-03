@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/02/24 21:05:42 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/03 18:44:39 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,7 @@ t_mat2				ft_mat2_rotation(float theta);
 t_mat2				ft_mat2_scale(t_vec2 s);
 t_mat2				ft_mat2_mul(t_mat2 a, t_mat2 b);
 t_vec2				ft_mat2_mulv(t_mat2 m, t_vec2 v);
+
+int					ft_min(int a, int b);
 
 #endif
