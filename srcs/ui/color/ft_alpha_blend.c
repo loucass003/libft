@@ -6,13 +6,13 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 18:42:17 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/03 18:42:26 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/03/03 18:50:36 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_color	alpha_blend(t_color c1, t_color c2)
+t_color	ft_alpha_blend(t_color c1, t_color c2)
 {
 	float	a1;
 	float	a2;
