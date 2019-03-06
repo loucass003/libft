@@ -6,53 +6,86 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/02/25 00:15:28 by llelievr         ###   ########.fr        #
+#    Updated: 2019/03/06 13:58:11 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
+
+BUILD_DIR = build
+OBJ_DIR = $(BUILD_DIR)/objs
+DEP_DIR = $(BUILD_DIR)/deps
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -Iincludes
+PRECOMPILE = @mkdir -p $(dir $@)
+POSTCOMPILE =
+
+ifdef DEPS
+
+DEPFLAGS = -MT $@ -MMD -MP -MF $(DEP_DIR)/$*.Td
+CFLAGS += $(DEPFLAGS)
+
+PRECOMPILE += ;mkdir -p $(dir $(DEP_DIR)/$*)
+POSTCOMPILE += @mv -f $(DEP_DIR)/$*.Td $(DEP_DIR)/$*.d && touch $@
+
+endif
+
 -include src.mk
 
-CC = clang
-NAME =libft.a
-CFLAGS=-Wall -Werror -Wextra -I ./includes -flto -O2 -ffast-math
-OBJ=$(addprefix $(OBJDIR),$(SRC:.c=.o))
-
-SRCDIR	=./srcs/
-INCDIR	=./includes/
-OBJDIR	=./objs/
-
-ERR="\e[1;31m"
-SUCCESS="\e[1;32m"
-WARN="\e[1;33m"
-INFO="\e[1;36m"
-RESET="\e[1;0m"
+OBJS = $(patsubst srcs/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@printf $(INFO)"CREATING LIBRARY ($(NAME)) "$(RESET)"\n"
-	@ar rc $(NAME) $(OBJ)
 
-$(OBJDIR)%.o: $(SRCDIR)%.c
-	@if [ ! -d $(dir $@) ]; then mkdir -p $(dir $@); fi
-	@printf "%s" $<
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf "%*s\e[1;36m%s\e[1;0m]\n" $$((80 - $(shell echo $< | awk '{print length}'))) "[" "DONE"
+$(OBJ_DIR)/%.o: srcs/%.c Makefile
+	$(PRECOMPILE)
+	@mkdir -p $(dir $@)
+	@$(call run_and_test, $(CC) $(CFLAGS) -c -o $@ $<)
+	$(POSTCOMPILE)
 
-dev: CFLAGS += -g
-dev: re
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
-	@echo "Cleaning objs"
-	@rm -rf $(OBJDIR)
+	rm -rf $(BUILD_DIR)
 
 fclean: clean
-	@echo "Cleaning library"
-	@rm -f $(NAME)
+	rm -f $(NAME)
+
+re: fclean $(NAME)
+
+include $(wildcard $(DEP_DIR)/**/*.d)
 
 get_files:
-	$(shell find srcs -type f | sed 's/srcs\///g' | sed 's/^/SRC+=/' > src.mk)
+	$(shell find srcs -type f | sed 's/^/SRCS+=/' > src.mk)
 
-re: fclean all
+.PHONY: all clean fclean re get_files
 
-.PHONY: all clean fclean re
+COM_COLOR   = \033[0;34m
+OBJ_COLOR   = \033[m
+OK_COLOR    = \033[0;36m
+ERROR_COLOR = \033[0;31m
+WARN_COLOR  = \033[0;33m
+NO_COLOR    = \033[m
+
+OK_STRING    = "OK"
+ERROR_STRING = "ERROR"
+WARN_STRING  = "WARNING"
+COM_STRING   = "Compiling"
+
+define run_and_test
+	printf "%b" "$(COM_COLOR)$(COM_STRING) $(OBJ_COLOR)$(@F)$(NO_COLOR)\r"; \
+	$(1) 2> $@.log; \
+	RESULT=$$?; \
+	if [ $$RESULT -ne 0 ]; then \
+		printf "%-80b%b" "$(COM_COLOR)$(COM_STRING)$(OBJ_COLOR) $<" "[ $(ERROR_COLOR)$(ERROR_STRING)$(NO_COLOR) ]\n"; \
+	elif [ -s $@.log ]; then \
+		printf "%-80b%b" "$(COM_COLOR)$(COM_STRING)$(OBJ_COLOR) $<" "[ $(WARN_COLOR)$(WARN_STRING)$(NO_COLOR) ]\n"; \
+	else  \
+		printf "%-80b%b" "$(COM_COLOR)$(COM_STRING)$(OBJ_COLOR) $(<)" "[ $(OK_COLOR)$(OK_STRING)$(NO_COLOR) ]\n"; \
+	fi; \
+	cat $@.log; \
+	rm -f $@.log; \
+	exit $$RESULT
+endef
