@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/16 23:07:53 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/01 15:30:49 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/07 23:30:33 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int		parse_len(t_json_state *state)
 t_json_value	*json_parse_string(t_json_state *state)
 {
 	char			c;
-	size_t			len;
+	int				len;
 	t_json_string	*string;
 
 	if ((len = parse_len(state)) == -1)

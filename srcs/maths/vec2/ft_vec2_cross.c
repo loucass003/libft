@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mat2_rotation.c                                 :+:      :+:    :+:   */
+/*   ft_vec2_cross.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 19:06:00 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/08 14:56:29 by llelievr         ###   ########.fr       */
+/*   Created: 2018/12/07 18:35:02 by llelievr          #+#    #+#             */
+/*   Updated: 2019/04/08 14:45:33 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <math.h>
 
-t_mat2			ft_mat2_rotation(float theta)
+float		ft_vec2_cross(t_vec2 a, t_vec2 b)
 {
-	const float	c = cosf(theta);
-	const float s = sinf(theta);
-
-	return ((t_mat2)((t_mat2_data){
-		c, -s,
-		s, c
-	}));
+	return ((a.x * b.y) - (a.y * b.x));
 }

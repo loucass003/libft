@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 12:19:06 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/01 15:51:15 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/07 23:31:50 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct		s_json_array
 typedef struct		s_json_string
 {
 	t_json_value	super;
-	size_t			value_len;
+	int				value_len;
 	char			value[];
 }					t_json_string;
 

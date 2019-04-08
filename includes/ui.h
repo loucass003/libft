@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:08:28 by llelievr          #+#    #+#             */
-/*   Updated: 2019/03/03 18:43:04 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:52:21 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct		s_size
 
 typedef	union		u_size
 {
-	size_t			a[4];
+	size_t			a[2];
 	t_size			s;
 }					t_size_u;
 
