@@ -6,7 +6,7 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/03/06 13:58:11 by llelievr         ###   ########.fr        #
+#    Updated: 2019/04/12 15:24:18 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ re: fclean $(NAME)
 include $(wildcard $(DEP_DIR)/**/*.d)
 
 get_files:
-	$(shell find srcs -type f | sed 's/^/SRCS+=/' > src.mk)
+	@find srcs -type f | sed 's/^/SRCS+=/' > src.mk
 
 .PHONY: all clean fclean re get_files
 
