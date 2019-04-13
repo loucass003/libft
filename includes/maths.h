@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/12 15:56:20 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/13 02:07:07 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ t_vec2				ft_vec2_div(t_vec2 a, t_vec2 b);
 t_vec2				ft_vec2_mul(t_vec2 a, t_vec2 b);
 float				ft_vec2_cross(t_vec2 a, t_vec2 b);
 float				ft_vec2_dot(t_vec2 a, t_vec2 b);
-float				ft_vec2_cross(t_vec2 a, t_vec2 b);
 float				ft_vec2_len(t_vec2 v);
 t_vec2				ft_vec2_norm(t_vec2 v);
 t_vec2				ft_vec2_inv(t_vec2 v);
