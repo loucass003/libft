@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:14:30 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/17 14:47:55 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/17 15:48:28 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ void	*ft_memset(void *dst, int car, size_t len)
 	while (i < len)
 		if (len - i >= 8)
 		{
-			((uint64_t *)dst)[i] = d;
+			((uint64_t *)dst)[i / 8] = d;
 			i += 8;
 		}
 		else if (len - i >= 4)
 		{
-			((uint32_t *)dst)[i] = c;
+			((uint32_t *)dst)[i / 4] = c;
 			i += 4;
 		}
 		else if (len - i >= 2)
 		{
-			((uint16_t *)dst)[i] = b;
+			((uint16_t *)dst)[i / 2] = b;
 			i += 2;
 		}
 		else
