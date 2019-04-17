@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:38:18 by llelievr          #+#    #+#             */
-/*   Updated: 2018/12/13 02:36:15 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/17 14:50:48 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void		ft_bzero(void *s, size_t n)
 {
-	char	*str;
-
-	str = (char*)s;
-	while (n-- > 0)
-		*str++ = 0;
+	ft_memset(s, 0, n);
 }
