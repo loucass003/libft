@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 19:06:00 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/08 14:56:29 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/18 19:40:21 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_mat2			ft_mat2_rotation(float theta)
 	const float s = sinf(theta);
 
 	return ((t_mat2)((t_mat2_data){
-		c, -s,
-		s, c
+		s, c,
+		c, -s
 	}));
 }
