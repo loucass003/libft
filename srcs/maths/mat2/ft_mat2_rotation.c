@@ -19,7 +19,7 @@ t_mat2			ft_mat2_rotation(float theta)
 	const float s = sinf(theta);
 
 	return ((t_mat2)((t_mat2_data){
-		c, -s,
-		s, c
+		s, c,
+		c, -s
 	}));
 }

@@ -14,7 +14,7 @@
 
 t_pixel		ft_pixel_div(t_pixel a, t_pixel b)
 {
-	a.x += b.x;
-	a.y += b.y;
+	a.x /= b.x;
+	a.y /= b.y;
 	return (a);
 }
