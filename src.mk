@@ -18,6 +18,7 @@ SRCS+=srcs/lists/ft_lstnew.c
 SRCS+=srcs/lists/ft_lstput.c
 SRCS+=srcs/maths/ft_abs.c
 SRCS+=srcs/maths/ft_absf.c
+SRCS+=srcs/maths/ft_max.c
 SRCS+=srcs/maths/ft_min.c
 SRCS+=srcs/maths/ft_pow.c
 SRCS+=srcs/maths/ft_sqrt.c

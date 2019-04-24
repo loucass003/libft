@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/16 20:07:52 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:48:48 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,6 @@ t_mat2				ft_mat2_mul(t_mat2 a, t_mat2 b);
 t_vec2				ft_mat2_mulv(t_mat2 m, t_vec2 v);
 
 int					ft_min(int a, int b);
+int					ft_max(int a, int b);
 
 #endif
