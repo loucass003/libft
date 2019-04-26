@@ -6,7 +6,7 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/04/16 22:50:47 by llelievr         ###   ########.fr        #
+#    Updated: 2019/04/26 11:26:46 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3
 PRECOMPILE = @mkdir -p $(dir $@)
 POSTCOMPILE =
 
-ifdef DEPS
+ifndef NODEPS
 
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEP_DIR)/$*.Td
 CFLAGS += $(DEPFLAGS)
