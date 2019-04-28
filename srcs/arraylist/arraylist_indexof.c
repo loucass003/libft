@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   arraylist_indexof.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:23:49 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/28 19:44:43 by llelievr         ###   ########.fr       */
+/*   Created: 2019/04/28 19:42:47 by llelievr          #+#    #+#             */
+/*   Updated: 2019/04/28 19:48:35 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_H
-# define FT_LIBFT_H
-# include <string.h>
-# include <sys/types.h>
-# include <stddef.h>
+#include "arraylist.h"
 
-# include "types.h"
-# include "strings.h"
-# include "memory.h"
-# include "convert.h"
-# include "lists.h"
-# include "arraylist.h"
-# include "maths.h"
-# include "ui.h"
-# include "json.h"
+int		arraylist_indexof(t_arraylist *arr, void *elem)
+{
+	int	i;
 
-#endif
+	i = -1;
+	while (++i < arr->len)
+	{
+		if (arr->values[i] == elem)
+			return (i);
+	}
+	return (-1);
+}

@@ -1,3 +1,7 @@
+SRCS+=srcs/arraylist/arraylist.c
+SRCS+=srcs/arraylist/arraylist_append.c
+SRCS+=srcs/arraylist/arraylist_indexof.c
+SRCS+=srcs/arraylist/arraylist_splice.c
 SRCS+=srcs/convert/int_to_str.c
 SRCS+=srcs/json/json_array.c
 SRCS+=srcs/json/json_boolean.c
