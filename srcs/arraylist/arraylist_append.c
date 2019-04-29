@@ -6,11 +6,11 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:55:05 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/28 19:56:38 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/29 02:21:02 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "arraylist.h"
+#include "libft.h"
 #include <stdlib.h>
 
 t_arraylist	*arraylist_append(t_arraylist **arr, void *elem)

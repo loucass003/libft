@@ -6,11 +6,11 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:41:45 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/28 19:42:41 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/29 01:52:11 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "arraylist.h"
+#include "libft.h"
 
 t_arraylist	*arraylist_splicef(t_arraylist *arr, int index, int n, void (*del_val)(void *elem))
 {

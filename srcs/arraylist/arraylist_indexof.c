@@ -6,11 +6,11 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:42:47 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/28 19:48:35 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/29 01:52:08 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "arraylist.h"
+#include "libft.h"
 
 int		arraylist_indexof(t_arraylist *arr, void *elem)
 {

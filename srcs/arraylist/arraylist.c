@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:34:12 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/28 19:55:18 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/29 02:04:21 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_arraylist	*create_arraylist(int capacity)
 
 	if (!(arr = (t_arraylist *)malloc(sizeof(t_arraylist) + sizeof(void *) * capacity)))
 		return (NULL);
+	arr->len = 0;
 	arr->capacity = capacity;
 	return (arr);
 }
