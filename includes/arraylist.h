@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:44:08 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/28 19:55:42 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/30 13:46:45 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_arraylist		*arraylist_appendm(t_arraylist **arr, void *elem, size_t n);
 t_arraylist		*arraylist_splicef(t_arraylist *arr, int index, int n,
 					void (*del_val)(void *elem));
 t_arraylist		*arraylist_splice(t_arraylist *arr, int index, int n);
-void			arraylist_clear(t_arraylist *arr, void (*del_val)(void *elem));
+void			arraylist_clear(t_arraylist **arr, void (*del_val)(void *elem));
 int				arraylist_indexof(t_arraylist *arr, void *elem);
 
 #endif
