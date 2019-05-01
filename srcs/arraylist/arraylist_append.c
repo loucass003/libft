@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:55:05 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/30 22:50:35 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/04/30 23:04:25 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_arraylist	*arraylist_append(t_arraylist **arr, void *elem)
 		ft_memcpy(new, *arr, old_size);
 		free(*arr);
 		*arr = new;
-
 	}
 	(*arr)->values[(*arr)->len++] = elem;
 	return (*arr);
@@ -36,6 +35,7 @@ t_arraylist	*arraylist_append(t_arraylist **arr, void *elem)
 t_arraylist	*arraylist_appendm(t_arraylist **arr, void *elem, size_t n)
 {
 	void	*new;
+	
 	if (!(new = malloc(n)))
 		return (NULL);
 	ft_memcpy(new, elem, n);

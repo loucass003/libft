@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/28 19:34:12 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/30 17:15:19 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/05/01 01:22:34 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 t_arraylist	*create_arraylist(int capacity)
 {
-	t_arraylist	*arr;
+	t_arraylist			*arr;
 	const size_t		size = sizeof(t_arraylist) + sizeof(void *) * capacity;
 
+	if (capacity <= 0)
+		return (NULL);
 	if (!(arr = (t_arraylist *)malloc(size)))
 		return (NULL);
 	ft_bzero(arr, size);
