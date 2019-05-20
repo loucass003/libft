@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/04/24 10:48:48 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/05/20 15:07:26 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,9 @@ t_vec3				ft_vec3_inv(t_vec3 v);
 t_vec2				ft_vec2_add(t_vec2 a, t_vec2 b);
 t_vec2				ft_vec2_sub(t_vec2 a, t_vec2 b);
 t_vec2				ft_vec2_div(t_vec2 a, t_vec2 b);
+t_vec2				ft_vec2_div_s(t_vec2 a, float s);
 t_vec2				ft_vec2_mul(t_vec2 a, t_vec2 b);
+t_vec2				ft_vec2_mul_s(t_vec2 a, float s);
 float				ft_vec2_cross(t_vec2 a, t_vec2 b);
 float				ft_vec2_dot(t_vec2 a, t_vec2 b);
 float				ft_vec2_cross(t_vec2 a, t_vec2 b);
