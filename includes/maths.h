@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/05/20 15:07:26 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/05/20 23:07:10 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,9 @@ t_bool				ft_json_vec2(t_json_value *val, t_vec2 *vec);
 t_vec3				ft_vec3_add(t_vec3 a, t_vec3 b);
 t_vec3				ft_vec3_sub(t_vec3 a, t_vec3 b);
 t_vec3				ft_vec3_div(t_vec3 a, t_vec3 b);
+t_vec3				ft_vec3_div_s(t_vec3 a, float v);
 t_vec3				ft_vec3_mul(t_vec3 a, t_vec3 b);
+t_vec3				ft_vec3_mul_s(t_vec3 a, float v);
 float				ft_vec3_dot(t_vec3 a, t_vec3 b);
 float				ft_vec3_len(t_vec3 v);
 t_vec3				ft_vec3_norm(t_vec3 v);
