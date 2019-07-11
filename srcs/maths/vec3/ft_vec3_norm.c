@@ -6,15 +6,30 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 18:09:15 by llelievr          #+#    #+#             */
-/*   Updated: 2018/12/06 18:33:08 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/07/11 19:26:33 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vec3		ft_vec3_norm(t_vec3 v)
+static float	q_rsqrt(float number)
 {
-	const float	len = ft_vec3_len(v);
+	long		i;
+	float		x2;
+	float		y;
 
-	return (ft_vec3_div(v, (t_vec3) { len, len, len }));
+	x2 = number * 0.5F;
+	y = number;
+	i = *(long *)&y;
+	i = 0x5f3759df - (i >> 1);
+	y = *(float *)&i;
+	y = y * (1.5F - (x2 * y * y));
+	return (y);
+}
+
+t_vec3			ft_vec3_norm(t_vec3 v)
+{
+	const float	len = q_rsqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+
+	return (ft_vec3_mul(v, (t_vec3) { len, len, len }));
 }

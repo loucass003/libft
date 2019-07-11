@@ -6,7 +6,7 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/07/11 09:05:20 by llelievr         ###   ########.fr        #
+#    Updated: 2019/07/11 19:49:55 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ BUILD_DIR = build
 OBJ_DIR = $(BUILD_DIR)/objs
 DEP_DIR = $(BUILD_DIR)/deps
 
-CC = clang
-CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3  -ffast-math
 PRECOMPILE = @mkdir -p $(dir $@)
 POSTCOMPILE =
 
