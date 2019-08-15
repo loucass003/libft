@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 18:09:15 by llelievr          #+#    #+#             */
-/*   Updated: 2019/07/11 19:26:33 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/08/15 17:40:54 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ t_vec3			ft_vec3_norm(t_vec3 v)
 {
 	const float	len = q_rsqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 
-	return (ft_vec3_mul(v, (t_vec3) { len, len, len }));
+	return ((t_vec3) { v.x * len, v.y * len, v.z * len });
 }
