@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:46:45 by llelievr          #+#    #+#             */
-/*   Updated: 2018/12/08 20:49:53 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/08/15 15:46:01 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_vec3		ft_vec3_inv(t_vec3 v)
 {
-	return (ft_vec3_mul(v, (t_vec3){-1, -1, -1}));
+	return ((t_vec3){-v.x, -v.y, -v.z});
 }
