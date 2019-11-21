@@ -17,7 +17,11 @@ OBJ_DIR = $(BUILD_DIR)/objs
 DEP_DIR = $(BUILD_DIR)/deps
 
 CC = clang
+<<<<<<< Updated upstream
 CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3 -ffast-maths
+=======
+CFLAGS = -Wall -Wextra -Werror -Iincludes -g
+>>>>>>> Stashed changes
 PRECOMPILE = @mkdir -p $(dir $@)
 POSTCOMPILE =
 
