@@ -6,13 +6,14 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 02:58:22 by llelievr          #+#    #+#             */
-/*   Updated: 2019/01/09 15:06:59 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/11/21 15:08:58 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRINGS_H
 # define STRINGS_H
 # define GNL_BUFF_SIZE 4096
+# include "types.h"
 # include "libft.h"
 
 # ifndef OPEN_MAX
@@ -56,6 +57,7 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(const char *s, char c);
 
 int					ft_atoi(const char *str);
+int					ft_atoi2(const char *str, t_bool *error);
 
 char				*ft_itoa(int n);
 
