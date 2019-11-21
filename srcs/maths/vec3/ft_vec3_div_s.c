@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 17:59:13 by llelievr          #+#    #+#             */
-/*   Updated: 2019/05/20 23:06:26 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/11/08 17:20:24 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 t_vec3		ft_vec3_div_s(t_vec3 a, float v)
 {
-	a.x /= v;
-	a.y /= v;
-	a.z /= v;
-	return (a);
+	return (ft_vec3_mul_s(a, 1 / v));
 }
