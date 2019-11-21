@@ -17,7 +17,7 @@ OBJ_DIR = $(BUILD_DIR)/objs
 DEP_DIR = $(BUILD_DIR)/deps
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3 -ffast-maths
+CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3 -ffast-math
 PRECOMPILE = @mkdir -p $(dir $@)
 POSTCOMPILE =
 
