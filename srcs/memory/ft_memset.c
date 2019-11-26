@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:14:30 by llelievr          #+#    #+#             */
-/*   Updated: 2019/11/08 17:13:01 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/11/25 22:14:10 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memset(void *dst, int car, size_t len)
 {
-	//BITE
 	size_t			i;
 	const uint16_t	b = ((uint16_t)car << 8 | (uint16_t)car);
 	const uint32_t	c = ((uint32_t)b << 16 | (uint32_t)b);

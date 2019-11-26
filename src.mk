@@ -40,6 +40,7 @@ SRCS+=srcs/strings/ft_putnbr.c
 SRCS+=srcs/strings/ft_strlen.c
 SRCS+=srcs/strings/ft_strnequ.c
 SRCS+=srcs/strings/ft_striteri.c
+SRCS+=srcs/strings/ft_strndup.c
 SRCS+=srcs/strings/ft_strtrim.c
 SRCS+=srcs/strings/ft_strncmp.c
 SRCS+=srcs/strings/ft_strmapi.c
