@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/11/28 16:29:44 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/11/28 16:31:12 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ typedef struct		s_mat4_data
 typedef	union		u_mat4
 {
 	float			a[4][4];
+	float			b[16];
 	t_mat4_data		d;
 }					t_mat4;
 
 typedef union		u_mat2
 {
 	float			a[2][2];
-	float			b[16];
 	t_mat2_data		d;
 }					t_mat2;
 
