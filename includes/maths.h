@@ -6,7 +6,7 @@
 /*   By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 03:03:33 by llelievr          #+#    #+#             */
-/*   Updated: 2019/07/04 12:11:51 by llelievr         ###   ########.fr       */
+/*   Updated: 2019/11/28 16:29:44 by llelievr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef	union		u_mat4
 typedef union		u_mat2
 {
 	float			a[2][2];
+	float			b[16];
 	t_mat2_data		d;
 }					t_mat2;
 
