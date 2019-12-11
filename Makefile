@@ -6,7 +6,7 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/12/10 01:06:18 by llelievr         ###   ########.fr        #
+#    Updated: 2019/12/11 12:08:34 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS=$(GFLAGS) $(OPTI_FLAGS)
 PRECOMPILE = @mkdir -p $(dir $@)
 POSTCOMPILE =
 
-DEBUG ?= 1
+DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	CFLAGS = $(GFLAGS) -g
 endif
