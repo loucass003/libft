@@ -6,7 +6,7 @@
 #    By: llelievr <llelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:49:27 by llelievr          #+#    #+#              #
-#    Updated: 2019/11/21 18:58:14 by llelievr         ###   ########.fr        #
+#    Updated: 2019/12/10 01:06:18 by llelievr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,16 @@ OBJ_DIR = $(BUILD_DIR)/objs
 DEP_DIR = $(BUILD_DIR)/deps
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -Iincludes -flto -O3 -ffast-math
+GFLAGS=-Wall -Wextra
+OPTI_FLAGS=-flto -O3 -march=native -ffast-math
+CFLAGS=$(GFLAGS) $(OPTI_FLAGS)
 PRECOMPILE = @mkdir -p $(dir $@)
 POSTCOMPILE =
+
+DEBUG ?= 1
+ifeq ($(DEBUG), 1)
+	CFLAGS = $(GFLAGS) -g
+endif
 
 ifndef NODEPS
 
@@ -41,7 +48,7 @@ all: $(NAME)
 $(OBJ_DIR)/%.o: srcs/%.c Makefile
 	$(PRECOMPILE)
 	@mkdir -p $(dir $@)
-	@$(call run_and_test, $(CC) $(CFLAGS) -c -o $@ $<)
+	@$(call run_and_test, $(CC) -I includes $(CFLAGS) -c -o $@ $<)
 	$(POSTCOMPILE)
 
 $(NAME): $(OBJS)
@@ -55,7 +62,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-include $(wildcard $(DEP_DIR)/**/*.d)
+-include $(shell find $(DEP_DIR) -iname "*.d")
 
 get_files:
 	@find srcs -type f | sed 's/^/SRCS+=/' > src.mk
